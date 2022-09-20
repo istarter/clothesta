@@ -7,7 +7,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 
-import { getFireStore, doc, getDoc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,24 +19,21 @@ const firebaseConfig = {
   appId: "1:361791946018:web:17b44052a9926daff5397b",
 };
 
-// Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
-provider.setCustomParameters({
+googleProvider.setCustomParameters({
   prompt: "select_account",
 });
 
-// export const createUserProfileDocument = async (userAuth, additionalData) => {
-//   if (!userAuth) return;
-
-//   console.log(userAuth);
-// };
-
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
-export const db = getFireStore();
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () =>
+  signInWithRedirect(auth, googleProvider);
+
+export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (
   userAuth,
