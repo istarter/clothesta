@@ -1,0 +1,25 @@
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCw-C3__txGYFKfL8KN1zM2AL9vkAgcHwM",
+  authDomain: "clothesta-clothing-db.firebaseapp.com",
+  projectId: "clothesta-clothing-db",
+  storageBucket: "clothesta-clothing-db.appspot.com",
+  messagingSenderId: "361791946018",
+  appId: "1:361791946018:web:17b44052a9926daff5397b",
+};
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.scss";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
